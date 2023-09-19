@@ -2,19 +2,19 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const movieSchema = new mongoose.Schema({
-  country : {
+  country: {
     type: String,
     required: true,
   },
-  director : {
+  director: {
     type: String,
     required: true,
   },
-  duration : {
+  duration: {
     type: Number,
     required: true,
   },
-  year : {
+  year: {
     type: String,
     required: true,
   },
@@ -30,7 +30,7 @@ const movieSchema = new mongoose.Schema({
       message: 'Некорректная ссылка',
     },
   },
-  trailerLink: {
+  trailer: {
     type: String,
     required: true,
     validate: {
@@ -54,12 +54,12 @@ const movieSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  nameRU: { 
-    type: String, 
+  nameRU: {
+    type: String,
     required: true,
   },
-  nameEN: { 
-    type: String, 
+  nameEN: {
+    type: String,
     required: true,
   },
 });

@@ -1,4 +1,6 @@
 const User = require('../models/user');
+const NotFoundError = require('../errors/NotFoundError');
+const BadRequestError = require('../errors/BadRequestError');
 
 module.exports.updateUserInfo = (req, res, next) => {
   const { email, name } = req.body;
