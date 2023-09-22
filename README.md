@@ -1,1 +1,1 @@
-# movies-explorer-api
+backend: https://api.movies-explorer-api.nomoredomainsrocks.ru
