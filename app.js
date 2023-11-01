@@ -1,11 +1,11 @@
-require('dotenv').config();
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const { errors } = require('celebrate');
-const router = require('./routes/index');
-const { handleError } = require('./middlewares/errorsHandler');
-const { requestLogger, errorLogger } = require('./middlewares/logger');
+require("dotenv").config();
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const { errors } = require("celebrate");
+const router = require("./routes/index");
+const { handleError } = require("./middlewares/errorsHandler");
+const { requestLogger, errorLogger } = require("./middlewares/logger");
 
 const { PORT = 3000 } = process.env;
 
@@ -14,13 +14,26 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb')
+mongoose
+  .connect("mongodb://127.0.0.1:27017/bitfilmsdb")
   .then(() => {
-    console.log('Бд подключена');
+    console.log("Бд подключена");
   })
   .catch(() => {
-    console.log('Что-то пошло не так');
+    console.log("Что-то пошло не так");
   });
+
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",
+    "https://api.movies-explorer-api.nomoredomainsrocks.ru",
+    "http://api.movies-explorer-api.nomoredomainsrocks.ru",
+  ],
+  optionsSuccessStatus: 200,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(requestLogger);
 app.use(router);
