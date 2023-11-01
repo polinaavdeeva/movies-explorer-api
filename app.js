@@ -27,6 +27,7 @@ mongoose
 const corsOptions = {
   origin: [
     "http://localhost:3000",
+    "http://localhost:3001",
     "https://api.movies-explorer-api.nomoredomainsrocks.ru",
     "http://api.movies-explorer-api.nomoredomainsrocks.ru",
   ],
