@@ -9,7 +9,7 @@ const validateMovie = celebrate({
     year: Joi.string().required(),
     description: Joi.string().required(),
     image: Joi.string().required().regex(regExp),
-    trailer: Joi.string().required().regex(regExp),
+    trailerLink: Joi.string().required().regex(regExp),
     thumbnail: Joi.string().required().regex(regExp),
     movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
