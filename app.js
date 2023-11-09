@@ -24,7 +24,7 @@ mongoose
     console.log("Что-то пошло не так");
   });
 
-const corsOptions = {
+/*const corsOptions = {
   origin: [
     "http://localhost:3000",
     "http://localhost:3001",
@@ -35,9 +35,9 @@ const corsOptions = {
   ],
   optionsSuccessStatus: 200,
   credentials: true,
-};
+};*/
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(requestLogger);
 app.use(router);
