@@ -30,6 +30,8 @@ const corsOptions = {
     "http://localhost:3001",
     "https://api.movies-explorer-api.nomoredomainsrocks.ru",
     "http://api.movies-explorer-api.nomoredomainsrocks.ru",
+    "https://movies-explorer.nomoredomainsrocks.ru",
+    "http://movies-explorer.nomoredomainsrocks.ru",
   ],
   optionsSuccessStatus: 200,
   credentials: true,
